@@ -60,9 +60,7 @@ def enumeratezones(ipaddress):
                         match = pattern.search(result)
                         if match is not None: wirelesscount += 1
         rebootorder = 0
-        if wirelesscount == 0:
-            rebootorder = 0
-        else:
+        if wirelesscount != 0:
             rebootorder = 1000*ethernetcount+wirelesscount
         zone = [zonename, ipaddress, rebootorder]
         zones.append(zone)
